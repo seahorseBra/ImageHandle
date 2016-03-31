@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,7 +28,8 @@ public class ImageHandleActivity extends AppCompatActivity {
     Button startCompress;
     @Bind(R.id.save_img)
     Button saveImg;
-
+    @Bind(R.id.image_grid)
+    GridView mGridView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
