@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CustemView</string>
+    <string name="title_activity_image_handle1">ImageHandleActivity1</string>
 </resources>
