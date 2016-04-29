@@ -3,7 +3,7 @@
     package="com.example.administrator.custemview">
 
     <uses-permission android:name="android.permission.CAMERA" />
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:name=".CApp"
         android:allowBackup="true"
@@ -18,9 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ImageHandleActivity"
             android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name=".ReflectionActivity"
+            android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>

@@ -75,8 +75,8 @@ public class ImageHandleActivity extends AppCompatActivity implements View.OnCli
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA && resultCode == Activity.RESULT_OK && null != data) {
+
             Log.d(TAG, "onActivityResult() called with: " + "requestCode = [" + requestCode + "], resultCode = [" + resultCode + "], data = [" + data.toString() + "]");
         }
-
     }
 }

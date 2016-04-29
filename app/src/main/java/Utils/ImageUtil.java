@@ -91,4 +91,9 @@ public class ImageUtil {
         Bitmap bitmap = BitmapFactory.decodeFile(pathName);
         return compressImage(bitmap, size);
     }
+
+    @Override
+    public String toString() {
+        return "ImageUtils";
+    }
 }

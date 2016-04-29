@@ -27,13 +27,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     @Bind(R.id.main_activity_imghandle)
     Button mImgHandle;
-
+    @Bind(R.id.main_activity_refelection)
+    Button mRelection;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mImgHandle.setOnClickListener(this);
+        mRelection.setOnClickListener(this);
     }
 
 
@@ -145,6 +147,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         switch (v.getId()) {
             case R.id.main_activity_imghandle:
                 goActivity(ImageHandleActivity.class);
+                break;
+            case R.id.main_activity_refelection:
+                goActivity(ReflectionActivity.class);
                 break;
         }
     }

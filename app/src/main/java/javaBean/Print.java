@@ -6,7 +6,6 @@ package javaBean;
 public class Print {
     private int x;
     private int y;
-    private int z;
 
     public Print() {
     }
@@ -14,6 +13,10 @@ public class Print {
     public Print(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public double getLineLenth() {
+        return Math.sqrt(x * x + y * y);
     }
 
     public int getX() {
