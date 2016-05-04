@@ -14,8 +14,8 @@ android {
 
     archivesBaseName = "custem${defaultConfig.versionName}-${defaultConfig.versionCode}"
 
-    signingConfigs{
-        myConfig{
+    signingConfigs {
+        myConfig {
             storeFile file('custemkeyalias.jks')
             storePassword '123456'
             keyAlias 'ee'
@@ -26,10 +26,10 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig  signingConfigs.myConfig
+            signingConfig signingConfigs.myConfig
             applicationIdSuffix ".len"
         }
-        debug{
+        debug {
             applicationIdSuffix ".debug"
             minifyEnabled false
         }
@@ -55,8 +55,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:recyclerview-v7:23.2.0'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.android.support:design:23.2.0'
 }

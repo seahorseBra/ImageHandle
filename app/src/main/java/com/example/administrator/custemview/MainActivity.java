@@ -3,14 +3,9 @@ package com.example.administrator.custemview;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Button;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -26,50 +21,21 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import javaBean.Print;
 import javaBean.Student;
-import view.AlmanacItemView;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener{
-
-    private static final String TAG = "MainActivity";
-    private TextView mText;
-    /* @Bind(R.id.tv)
-    AlmanacItemView tv;
-    @Bind(R.id.et)
-    EditText et;*/
+public class MainActivity extends AppCompatActivity implements OnClickListener {
 
 
+    @Bind(R.id.main_activity_imghandle)
+    Button mImgHandle;
+    @Bind(R.id.main_activity_refelection)
+    Button mRelection;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        findViewById(R.id.main_activity_imghandle).setOnClickListener(this);
-//        tv.setDate(R.mipmap.ic_launcher, "啊喂噶围观");
-//        witch(et);
-
-//        testGson();
-//        testGson1();
-//        testGson2();
-    }
-
-    private String witch(View view) {
-        ((EditText) view).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                Log.d(TAG, "beforeTextChanged() called with: " + "s = [" + s + "], start = [" + start + "], count = [" + count + "], after = [" + after + "]");
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Log.d(TAG, "onTextChanged() called with: " + "s = [" + s + "], start = [" + start + "], before = [" + before + "], count = [" + count + "]");
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                Log.d(TAG, "afterTextChanged() called with: " + "s = [" + s + "]");
-            }
-        });
-        return null;
+        mImgHandle.setOnClickListener(this);
+        mRelection.setOnClickListener(this);
     }
 
 
@@ -182,10 +148,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             case R.id.main_activity_imghandle:
                 goActivity(ImageHandleActivity.class);
                 break;
+            case R.id.main_activity_refelection:
+                goActivity(ReflectionActivity.class);
+                break;
         }
     }
 
-    private void goActivity(Class cls){
+    private void goActivity(Class cls) {
         Intent intent = new Intent();
         intent.setClass(this, cls);
         startActivity(intent);
